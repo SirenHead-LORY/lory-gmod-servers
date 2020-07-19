@@ -35,7 +35,7 @@ function GM:Think()
 
     for _, ply in ipairs(player.GetAll()) do
         if ply:Alive() and ply:GetNWBool("MurdererFog") then
-            if not ply.FogEmitter then
+            if not IsValid(ply.FogEmitter) then
                 ply.FogEmitter = ParticleEmitter(ply:GetPos())
                 self.FogEmitters[ply] = ply.FogEmitter
             end

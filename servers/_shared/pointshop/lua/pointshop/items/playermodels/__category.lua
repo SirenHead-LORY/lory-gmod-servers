@@ -37,7 +37,9 @@ function CATEGORY:OnHolster(ply)
 end
 
 function CATEGORY:Modify(modifications, item)
-    PS:ShowBodygroupChooser(item, modifications)
+    if item and item.Model then
+        PS:ShowBodygroupChooser(item, modifications)
+    end
 end
 
 function CATEGORY:OnModify(ply, modifications, item)

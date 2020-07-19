@@ -195,7 +195,7 @@ hook.Add(
     "HUDShouldDraw",
     "atlaschat.HUDShouldDraw",
     function(id)
-        local panel = atlaschat and atlaschat.theme.GetValue("panel")
+        local panel = atlaschat and atlaschat.theme and atlaschat.theme.GetValue("panel")
 
         if IsValid(panel) and id == "CHudChat" then
             return false
